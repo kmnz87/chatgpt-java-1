@@ -3,10 +3,13 @@ package com.unfbx.chatgpt.entity.assistant.thread;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.unfbx.chatgpt.entity.assistant.Tool;
+import com.unfbx.chatgpt.entity.assistant.ToolResources;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 
 @Data
@@ -26,6 +29,9 @@ public class ThreadResponse implements Serializable {
      * Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
      */
     private Map metadata;
+    private List<Tool> tools;
+    @JsonProperty("tool_resources")
+    private ToolResources toolResources;
     /**
      * 创建时间戳
      */

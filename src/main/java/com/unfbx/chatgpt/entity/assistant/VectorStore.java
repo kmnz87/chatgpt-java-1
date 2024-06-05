@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +16,7 @@ import java.util.Map;
  */
 @Data
 @Builder
-public class VectorStore {
+public class VectorStore implements Serializable {
 
     @JsonProperty("file_ids")
     private List<String> fileIds;

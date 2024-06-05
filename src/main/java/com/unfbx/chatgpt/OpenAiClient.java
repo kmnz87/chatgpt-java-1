@@ -128,7 +128,7 @@ public class OpenAiClient {
     private PageRequest pageRequest = PageRequest.builder().build();
 
     @Getter
-    private static final Headers assistantsHeader = Headers.of("OpenAI-Beta", "assistants=v1");
+    private static final Headers assistantsHeader = Headers.of("OpenAI-Beta", "assistants=v2");
 
     /**
      * 构造器

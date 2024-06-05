@@ -223,6 +223,10 @@ public class BaseChatCompletion implements Serializable {
          * 支持图片
          */
         GPT_4_VISION_PREVIEW("gpt-4-vision-preview"),
+        /**
+         * Our most advanced, multimodal flagship model that’s cheaper and faster than GPT-4 Turbo
+         */
+        GPT_4_O("gpt-4o"),
         ;
         private final String name;
     }

@@ -1,6 +1,9 @@
 package com.unfbx.chatgpt.entity.assistant.thread;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.unfbx.chatgpt.entity.assistant.Tool;
+import com.unfbx.chatgpt.entity.assistant.ToolResources;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,6 +23,9 @@ public class Thread implements Serializable {
      * 用于启动线程的消息列表。
      */
     private List<ThreadMessage> messages;
+    private List<Tool> tools;
+    @JsonProperty("tool_resources")
+    private ToolResources toolResources;
     /**
      * Set of 16 key-value pairs that can be attached to an object.
      * This can be useful for storing additional information about the object in a structured format.

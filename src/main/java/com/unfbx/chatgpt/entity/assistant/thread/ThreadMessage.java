@@ -18,9 +18,8 @@ public class ThreadMessage {
 
     private String role;
     private String content;
-    @JsonProperty("file_ids")
-    private List<String> fileIds;
     private Map metadata;
+    private List<Attachment> attachments;
 
     @Getter
     @AllArgsConstructor

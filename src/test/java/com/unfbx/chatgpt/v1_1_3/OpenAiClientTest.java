@@ -292,7 +292,7 @@ public class OpenAiClientTest {
                 .content("thread message 2")
                 .role(ThreadMessage.Role.USER.getName())
                 .metadata(new HashMap())
-                .fileIds(Collections.singletonList("file-tJoDYPF2MMlIOlvwfGbIV94D"))
+                //.fileIds(Collections.singletonList("file-tJoDYPF2MMlIOlvwfGbIV94D"))
                 .build();
 
         MessageResponse response = client.message("thread_Qm0KgV0RgeDUNj0SSQ5Bf8tj", threadMessage);

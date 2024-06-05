@@ -440,7 +440,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/assistants")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantResponse> assistant(@Body Assistant assistant);
 
 
@@ -452,7 +452,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/assistants/{assistant_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantResponse> retrieveAssistant(@Path("assistant_id") String assistantId);
 
     /**
@@ -464,7 +464,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/assistants/{assistant_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantResponse> modifyAssistant(@Path("assistant_id") String assistantId, @Body Assistant assistant);
 
     /**
@@ -475,7 +475,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @DELETE("v1/assistants/{assistant_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<DeleteResponse> deleteAssistant(@Path("assistant_id") String assistantId);
 
 
@@ -490,7 +490,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/assistants")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantListResponse<AssistantResponse>> assistants(@Query("limit") Integer limit, @Query("order") String order, @Query("before") String before, @Query("after") String after);
 
     /**
@@ -501,7 +501,7 @@ public interface OpenAiApi {
      * @return 返回信息AssistantResponse
      */
     @POST("v1/assistants/{assistant_id}/files")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantFileResponse> assistantFile(@Path("assistant_id") String assistantId, @Body AssistantFile assistantFile);
 
     /**
@@ -512,7 +512,7 @@ public interface OpenAiApi {
      * @return 助手文件信息
      */
     @GET("v1/assistants/{assistant_id}/files/{file_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantFileResponse> retrieveAssistantFile(@Path("assistant_id") String assistantId, @Path("file_id") String fileId);
 
     /**
@@ -523,7 +523,7 @@ public interface OpenAiApi {
      * @return 删除状态
      */
     @DELETE("v1/assistants/{assistant_id}/files/{file_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<DeleteResponse> deleteAssistantFile(@Path("assistant_id") String assistantId, @Path("file_id") String fileId);
 
     /**
@@ -537,7 +537,7 @@ public interface OpenAiApi {
      * @return 助手文件列表
      */
     @GET("v1/assistants/{assistant_id}/files")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantListResponse<AssistantFileResponse>> assistantFiles(@Path("assistant_id") String assistantId,
                                                                         @Query("limit") Integer limit, @Query("order") String order, @Query("before") String before, @Query("after") String after);
 
@@ -550,7 +550,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/threads")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<ThreadResponse> thread(@Body Thread thread);
 
 
@@ -562,7 +562,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/threads/{thread_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<ThreadResponse> retrieveThread(@Path("thread_id") String threadId);
 
     /**
@@ -574,7 +574,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/threads/{thread_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<ThreadResponse> modifyThread(@Path("thread_id") String threadId, @Body ModifyThread thread);
 
     /**
@@ -585,7 +585,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @DELETE("v1/threads/{thread_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<DeleteResponse> deleteThread(@Path("thread_id") String threadId);
 
     /**
@@ -597,7 +597,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/threads/{thread_id}/messages")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<MessageResponse> message(@Path("thread_id") String threadId, @Body ThreadMessage message);
 
     /**
@@ -609,7 +609,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/threads/{thread_id}/messages/{message_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<MessageResponse> retrieveMessage(@Path("thread_id") String threadId, @Path("message_id") String messageId);
 
     /**
@@ -622,7 +622,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/threads/{thread_id}/messages/{message_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<MessageResponse> modifyMessage(@Path("thread_id") String threadId, @Path("message_id") String messageId, @Body ModifyMessage message);
 
     /**
@@ -637,7 +637,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/threads/{thread_id}/messages")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantListResponse<MessageResponse>> messages(@Path("thread_id") String threadId,
                                                             @Query("limit") Integer limit, @Query("order") String order, @Query("before") String before, @Query("after") String after);
 
@@ -651,7 +651,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/threads/{thread_id}/messages/{message_id}/files/{file_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<MessageFileResponse> retrieveMessageFile(@Path("thread_id") String threadId, @Path("message_id") String messageId, @Path("file_id") String fileId);
 
     /**
@@ -667,7 +667,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/threads/{thread_id}/messages/{message_id}/files")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantListResponse<MessageFileResponse>> messageFiles(@Path("thread_id") String threadId, @Path("message_id") String messageId,
                                                                 @Query("limit") Integer limit, @Query("order") String order, @Query("before") String before, @Query("after") String after);
 
@@ -681,7 +681,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/threads/{thread_id}/runs")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<RunResponse> run(@Path("thread_id") String threadId, @Body Run run);
 
 
@@ -694,7 +694,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/threads/{thread_id}/runs/{run_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<RunResponse> retrieveRun(@Path("thread_id") String threadId, @Path("run_id") String runId);
 
     /**
@@ -707,7 +707,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/threads/{thread_id}/runs/{run_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<RunResponse> modifyRun(@Path("thread_id") String threadId, @Path("run_id") String runId, @Body ModifyRun run);
 
 
@@ -723,7 +723,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/threads/{thread_id}/runs")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantListResponse<RunResponse>> runs(@Path("thread_id") String threadId,
                                                     @Query("limit") Integer limit, @Query("order") String order, @Query("before") String before, @Query("after") String after);
 
@@ -738,7 +738,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/threads/{thread_id}/runs/{run_id}/submit_tool_outputs")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<RunResponse> submitToolOutputs(@Path("thread_id") String threadId, @Path("run_id") String runId, @Body ToolOutputBody toolOutputs);
 
 
@@ -751,7 +751,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/threads/{thread_id}/runs/{run_id}/cancel")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<RunResponse> cancelRun(@Path("thread_id") String threadId, @Path("run_id") String runId);
 
 
@@ -763,7 +763,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @POST("v1/threads/runs")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<RunResponse> threadRun(@Body ThreadRun threadRun);
 
     /**
@@ -776,7 +776,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/threads/{thread_id}/runs/{run_id}/steps/{step_id}")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<RunStepResponse> retrieveRunStep(@Path("thread_id") String threadId, @Path("run_id") String runId, @Path("step_id") String stepId);
 
 
@@ -793,7 +793,7 @@ public interface OpenAiApi {
      * @since 1.1.3
      */
     @GET("v1/threads/{thread_id}/runs/{run_id}/steps")
-    @Headers("OpenAI-Beta: assistants=v1")
+    @Headers("OpenAI-Beta: assistants=v2")
     Single<AssistantListResponse<RunStepResponse>> runSteps(@Path("thread_id") String threadId, @Path("run_id") String runId,
                                                             @Query("limit") Integer limit, @Query("order") String order, @Query("before") String before, @Query("after") String after);
 
