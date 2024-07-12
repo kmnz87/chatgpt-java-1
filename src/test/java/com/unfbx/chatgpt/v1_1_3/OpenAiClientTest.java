@@ -10,16 +10,15 @@ import com.unfbx.chatgpt.entity.assistant.*;
 import com.unfbx.chatgpt.entity.assistant.message.MessageFileResponse;
 import com.unfbx.chatgpt.entity.assistant.message.MessageResponse;
 import com.unfbx.chatgpt.entity.assistant.message.ModifyMessage;
+import com.unfbx.chatgpt.entity.assistant.message.Text;
 import com.unfbx.chatgpt.entity.assistant.run.*;
+import com.unfbx.chatgpt.entity.assistant.thread.*;
+import com.unfbx.chatgpt.entity.assistant.thread.Thread;
 import com.unfbx.chatgpt.entity.chat.BaseChatCompletion;
 import com.unfbx.chatgpt.entity.common.DeleteResponse;
 import com.unfbx.chatgpt.entity.common.PageRequest;
 import com.unfbx.chatgpt.entity.files.File;
 import com.unfbx.chatgpt.entity.files.UploadFileResponse;
-import com.unfbx.chatgpt.entity.assistant.thread.ModifyThread;
-import com.unfbx.chatgpt.entity.assistant.thread.Thread;
-import com.unfbx.chatgpt.entity.assistant.thread.ThreadMessage;
-import com.unfbx.chatgpt.entity.assistant.thread.ThreadResponse;
 import com.unfbx.chatgpt.interceptor.OpenAILogger;
 import com.unfbx.chatgpt.interceptor.OpenAiResponseInterceptor;
 import lombok.SneakyThrows;
@@ -242,7 +241,7 @@ public class OpenAiClientTest {
     public void thread() {
         ThreadMessage threadMessage = ThreadMessage
                 .builder()
-                .content("hello.")
+                .content(new ArrayList<>(Collections.singletonList(Content.builder().text("hello").build())))
                 .role(ThreadMessage.Role.USER.getName()).build();
         Thread thread = Thread.builder()
                 .metadata(new HashMap())
@@ -289,7 +288,7 @@ public class OpenAiClientTest {
     @Test
     public void message() {
         ThreadMessage threadMessage = ThreadMessage.builder()
-                .content("thread message 2")
+                .content(Collections.singletonList(Content.builder().text("hello").build()))
                 .role(ThreadMessage.Role.USER.getName())
                 .metadata(new HashMap())
                 //.fileIds(Collections.singletonList("file-tJoDYPF2MMlIOlvwfGbIV94D"))

@@ -1,7 +1,6 @@
 package com.unfbx.chatgpt.entity.assistant.thread;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,7 +16,7 @@ import java.util.Map;
 public class ThreadMessage {
 
     private String role;
-    private String content;
+    private List<Content> content;
     private Map metadata;
     private List<Attachment> attachments;
 
